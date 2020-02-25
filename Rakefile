@@ -27,7 +27,8 @@ namespace :db do
   
 end
 
+#rake console does not work for me outside of the namespace for :db...when it's not in :db, it passes the tests, but does not bring up console in the terminal. When I put the code for the console inside of the :db namespace, the console runs in the terminal, BUT no longer passes the tests!
 desc 'drop into the Pry console'
-task :console => db:environment do 
+task :console => :environment do 
   Pry.start 
 end 
